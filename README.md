@@ -56,7 +56,7 @@ Copie todo de una sola vez  (también si no le funciona copie uno por uno):
 
 ```
     git clone https://github.com/wachin/Risen-PC-Fluxbox-Debian-11-KDE
-    mv RRisen-PC-Fluxbox-Debian-11-KDE ~/.fluxbox
+    mv Risen-PC-Fluxbox-Debian-11-KDE ~/.fluxbox
     cd .fluxbox
     mkdir -p ~/.config/pnmixer/
     cp config ~/.config/pnmixer/ && cd && echo "Dios les bendiga"
