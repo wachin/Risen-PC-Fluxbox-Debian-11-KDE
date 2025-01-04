@@ -4,9 +4,8 @@ Fluxbox personalizado en español para Ordenadores con pocos recursos
 # Requerimientos
 Se requiere lo sigiente:
 
-- Debian 11 KDE
-
-  
+- Debian 11 KDE, MX Linux 21 KDE
+- Debian 12 KDE, MX Linux 23 KDE
 
 **Descargar:**
 
@@ -245,32 +244,130 @@ y lo dejo así:
 
 y allí le di clic en Aceptar y Aplicar y reinicié la aplicación Qt que necesitaba.
 
-# Atajos de teclado
+# Atajos de teclado, manual para crear atajos de teclado en Fluxbox
+
+Para crear atajos de teclado personalizados en Fluxbox en Linux, debes modificar el archivo `~/.fluxbox/keys`, que es el archivo de configuración de los atajos de teclado en Fluxbox
+
+## 1. **Ubicación del archivo de configuración de atajos de teclado**
+   El archivo de configuración para los atajos de teclado en Fluxbox se encuentra en `~/.fluxbox/keys`. Este archivo se edita con cualquier editor de texto de tu preferencia (por ejemplo, `nano`, `vim`, `gedit`, etc.).
+
+   Para editar el archivo, abre una terminal y ejecuta el siguiente comando:
+
+   ```bash
+   nano ~/.fluxbox/keys
+   ```
+
+## 2. **Estructura de los atajos de teclado**
+   En el archivo `keys`, cada línea se refiere a un atajo de teclado. Un atajo de teclado tiene tres componentes principales:
+
+   - **Teclas modificadoras**: Las teclas que se usan junto con la tecla de acción, por ejemplo:
+  
+Ctrl = `Control`
+Alt = `Mod1`
+Tecla Windows (Super) = `Mod4`
+
+   - **Tecla de acción**: La tecla que se presiona junto con las teclas modificadoras,, son letras como `a`, `k`, `m`, etc.
+   - **Comando a ejecutar**: El comando que se ejecutará cuando el atajo de teclado se active. Esto puede ser abrir una aplicación, ejecutar un script, mostrar un menú, etc.
+
+## 3. **Sintaxis para crear un atajo**
+   La sintaxis básica para un atajo de teclado es:
+
+   ```
+   <modificadores> <tecla> :Exec <comando>
+   ```
+
+   - `<modificadores>` puede ser una combinación de teclas como `Control`, `Mod1`, `Mod4`, etc.
+   - `<tecla>` es la tecla que se presiona junto con los modificadores.
+   - `<comando>` es el comando que deseas ejecutar cuando el atajo sea activado.
+
+   A continuación, algunos ejemplos de atajos de teclado comunes:
+
+   - **Abrir el navegador web**: Para abrir Firefox, el atajo sería:
+
+     ```
+     Control Mod1 f :Exec firefox
+     ```
+
+   - **Abrir una terminal**: Para abrir la terminal con el atajo `Ctrl + Alt + T`:
+
+     ```
+     Control Mod1 t :Exec xterm
+     ```
+
+   - **Cerrar una ventana**: Para cerrar la ventana activa con el atajo `Ctrl + Alt + C`:
+
+     ```
+     Control Mod1 c :Close
+     ```
+
+   - **Alternar entre ventanas**: Para alternar entre las ventanas abiertas, el atajo sería:
+
+     ```
+     Mod1 Tab :NextWindow
+     ```
+
+   - **Abrir el administrador de archivos**: Para abrir Nautilus (el explorador de archivos) con el atajo `Ctrl + Alt + E`:
+
+     ```
+     Control Mod1 e :Exec nautilus
+     ```
+** Nota:** Se puede cambiar por: dolphin, nemo, thunar, etc
+
+#### 4. **Reiniciar Fluxbox**
+   Después de agregar o modificar los atajos de teclado, es necesario recargar la configuración de Fluxbox para que los cambios surtan efecto. Para hacerlo, puedes ejecutar el siguiente comando:
+
+   ```bash
+   fluxbox-remote restart
+   ```
+
+#### 5. **Ejemplo de un archivo de atajos de teclado completo**
+   Los siguientes atajos en `~/.fluxbox/keys` son unos atajos que estoy utilizando::
+
+   ```
+   # Abrir AppFinder con atajo de teclado
+   Control Mod1 a :Exec xfce4-appfinder
+
+   # Abrir ksnip para capturar un rectángulo con el cursor
+   Control Mod1 k :Exec ksnip --rectarea
+
+   # Abrir el menu de aplicaciones con atajo de teclado
+   Mod4 m :RootMenu
+
+   # Poner una ventana siempre encima
+   Mod1 v :ToggleCmd {MacroCmd {RaiseLayer} {RaiseLayer}} {MacroCmd {LowerLayer} {LowerLayer}}
+   ```
+
+### Tabla con mis atajos de teclado
+
+Resumen de mis atajos de teclado:
+
+| Combinación de teclas      | Acción                                    | Comando ejecutado                       |
+|----------------------------|-------------------------------------------|-----------------------------------------|
+| **Ctrl + Alt + A**          | Abrir AppFinder                          | `xfce4-appfinder`                       |
+| **Ctrl + Alt + K**          | Abrir Ksnip para capturar un rectángulo  | `ksnip --rectarea`                      |
+| **Super (Windows) + M**     | Abrir el menú de aplicaciones de Fluxbox | `:RootMenu`                             |
+| **Alt + V**                 | Poner una ventana siempre encima         | `:ToggleCmd {MacroCmd {RaiseLayer} {RaiseLayer}} {MacroCmd {LowerLayer} {LowerLayer}}` |
+
+Con estos pasos y ejemplos, puedes agregar más atajos personalizados para cualquier aplicación o acción que desees realizar en Fluxbox.
 
 Antes de que vea la configuración de los atajos de teclado, si usted es curioso y luego quisiera editar los atajos para añadir uno (para usuarios avanzados) puede dar clic derecho en algún lugar del escritorio si estuviera sin ninguna aplicación encima o sino de clic derecho a la izquierda abajo del escritorio:  
 
-![](/home/wachin/Dev-wachin/RisenPC-Fluxbox-ES/vx_images/547226287889775.png)
+![](vx_images/547226287889775.png)
 
 luego clic en:  
 
 ![](vx_images/547226287889776.png)
 
-allí yo puse las siguientes configuraciones al archivo .fluxbox/keys  
+allí yo puse mis configuraciones al archivo .fluxbox/keys  
 
-![](vx_images/547226287889777.png)
-
-allí si ustedes quisieran podrían editar eso o poner otros atajos, pero esto es opcional
-
-Ahora si, los atajos
+y a continuación mis atajos con imagenes, y un atajo que ya estaba:
 
 ## AppFinder
 Para abrir el buscador de aplicaciones AppFinder (xfce4-appfinder)
 
-Tecla Windows + A  
+Tecla Ctrl + Alt + A  
 
 ![](vx_images/547226287889770.png)
-
-**Nota:** La Tecla de Windows también es conocida como Super, o Mod4 en las configuraciones de los atajos de teclado de Fluxbox. El AppFinder es de XFCE y desde la terminal se lo puede lanzar con xfce4-appfinder
 
 
 ## Abrir menu de aplicaciones
@@ -306,7 +403,6 @@ Alt + Z
 le puse este atajo de teclado porque para mi es más fácil de usar, pero si ustedes quisieran le pueden poner otro
 
 **Nota**: Esto lo modifiqué del archivo "key" en # current window commands donde originalmente tenía:  Mod1 + F9
-
 
  ## Minimizar todas las ventanas (no se puede)
  Pngo este título pues yo habría querido que hubiera una manerea de poder minimizar todas las ventanas de programas abiertas como en Windows (Super + D) pero no se puede, aunque se puede minimizando una por una

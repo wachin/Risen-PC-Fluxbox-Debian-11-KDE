@@ -1,9 +1,11 @@
 # Abrir AppFinder con atajo de teclado
-# Esto significa que la Tecla de Windows (Mod4) y la tecla A activarán a xfce4-appfinder
+# Esto significa que la Tecla Ctrl (Control) y Alt (Mod1) y la tecla A activarán a xfce4-appfinder
 # Ctrl + Alt + A lanza xfce4-appfinder
 Control Mod1 a :Exec xfce4-appfinder
 
-# Prueba ksnip
+# Abrir ksnip para capturar un rectángulo con el cursor
+# Esto significa que la Tecla Ctrl (Control) y Alt (Mod1) y la tecla K ejecutarán a Ksnip
+# Ctrol + Alt + K lanza Ksnip para capturar un rectángulo
 Control Mod1 k :Exec ksnip --rectarea
 
 # Abrir el menu de aplicaciones con atajo de teclado (en el lugar donde esté el cursor)
