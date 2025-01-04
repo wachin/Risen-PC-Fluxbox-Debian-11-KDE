@@ -9,7 +9,7 @@ Se requiere lo sigiente:
 
 **Descargar:**
 
-https://facilitarelsoftwarelibre.blogspot.com/2023/09/donde-descargar-debian-11-bullseye.html.html
+[https://facilitarelsoftwarelibre.blogspot.com/2023/09/donde-descargar-debian-11-bullseye.html.html](https://facilitarelsoftwarelibre.blogspot.com/2023/09/donde-descargar-debian-11-bullseye.html.html)
 
 
 
@@ -18,10 +18,10 @@ Con lo siguiente instalaremos las dependencias necesarias:
 
 **Dependencias**
 
-
-    sudo apt-get install git fluxbox lxappearance lxrandr pnmixer numlockx qt5ct \
-    nitrogen gnome-icon-theme gxkb xfce4-appfinder network-manager-gnome
-
+```
+sudo apt-get install git fluxbox lxappearance lxrandr pnmixer numlockx qt5ct \
+nitrogen gnome-icon-theme gxkb xfce4-appfinder network-manager-gnome
+```
 dele Enter y poner "s" de que si acepta
 
 **Nota:** Para instalarlo en MX Linux 19 debe quitar el paquete gammy.   
